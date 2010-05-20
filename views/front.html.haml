@@ -1,0 +1,49 @@
+.ui-layout-center
+  #accordion_center
+    %h3
+      %a{ href: "#", onclick: "changeHash('/center/accordion/1');" } Users
+    %div
+      %form{ action: "#/users/post", method: "POST" }
+        %label First Name
+        %input{ type: "text", name: "first" }
+        %label Last Name
+        %input{ type: "text", name: "last" }
+        %label Phone #
+        %input{ type: "text", name: "bio[phoneNumber]" }
+        %input.button.noSelect{ type: "submit", value: "Submit" }
+      #users
+        != this.partial('users.html.ejs')
+    %h3
+      %a{ href: "#", onclick: "changeHash('/center/accordion/2');" } Section 5
+    %div
+    %h3
+      %a{ href: "#", onclick: "changeHash('/center/accordion/3');" } Section 6
+    %div
+.ui-layout-north
+  #toolbar
+    #buttons
+      .button.noSelect.toggle Toggle
+.ui-layout-south
+.ui-layout-east
+  #accordion_east
+    %h3
+      %a{ href: "#", onclick: "changeHash('/east/accordion/1');" } Section 7
+    %div
+    %h3
+      %a{ href: "#", onclick: "changeHash('/east/accordion/2');" } Section 8
+    %div
+    %h3
+      %a{ href: "#", onclick: "changeHash('/east/accordion/3');" } Section 9
+    %div
+.ui-layout-west
+  #accordion_west
+    %h3
+      %a{ href: "#", onclick: "changeHash('/west/accordion/1');" } Section 1
+    %div
+    %h3
+      %a{ href: "#", onclick: "changeHash('/west/accordion/2');" } Section 2
+    %div
+    %h3
+      %a{ href: "#", onclick: "changeHash('/west/accordion/3');" } Section 3
+    %div
+#loading
