@@ -12,7 +12,7 @@
         %input{ type: "text", name: "bio[phoneNumber]" }
         %input.button.noSelect{ type: "submit", value: "Submit" }
       #users
-        != this.partial('users.html.ejs')
+        %script#users_partial{ src: '/public/views/users/_index.html', type: "text/html" }
     %h3
       %a{ href: "#", onclick: "changeHash('/center/accordion/2');" } Section 5
     %div

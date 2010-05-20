@@ -3,7 +3,6 @@
 $(function() {
   // setup
   $('#loading').hide();
-  $('.tempest-template').hide();
   
   // uniform
   $("select, input:checkbox, input:radio, input:file").uniform();
@@ -95,7 +94,7 @@ $(function() {
       
       this.get('#/', function(context) {
         $.ajax({ url: '/users/get', success: function(items) {
-          $("#users").append($.tempest("user", items));
+          $("#users_partial").render(items).appendTo("#users");
         }})
       });
       
