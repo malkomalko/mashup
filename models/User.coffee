@@ -21,7 +21,7 @@ Mongoose.Model.define 'User', {
 
   static: {
     homePage: (e) ->
-      @find().limit(1000).each (doc) ->
+      @find().limit(100).each (doc) ->
         @partial(doc)
       .then (docs) =>
         e.contentType 'json'

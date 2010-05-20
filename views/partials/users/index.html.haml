@@ -1,8 +1,10 @@
 %script#users_partial{type: "text/html"}
   :plain
-    <h2>${first} ${last}</h2>
-    <ul>
-    {{each(i,like) likes}}
-      <li>${like}</li>
-    {{/each}}
-    </ul>
+    <div class="box">
+      <h2>${first} ${last}</h2>
+      <ul>
+      {{each(i,like) likes}}
+        <li>${like}</li>
+      {{/each}}
+      </ul>
+    </div>
