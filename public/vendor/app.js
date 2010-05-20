@@ -94,10 +94,9 @@ $(function() {
       
       this.get('#/', function(context) {
         $.ajax({ url: '/users/get', success: function(items) {
-          var results = $("#users_partial").render(items).filter(function() {
+          $("#users_partial").render(items).filter(function() {
             return this.nodeType != 3;
-          });
-          results.appendTo("#users");
+          }).appendTo("#users");
         }})
       });
       
