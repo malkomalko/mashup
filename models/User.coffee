@@ -21,7 +21,7 @@ Mongoose.Model.define 'User', {
 
   static: {
     homePage: (e) ->
-      @find().limit(100).each (doc) ->
+      @find().limit(1000).each (doc) ->
         @partial(doc)
       .then (docs) =>
         e.contentType 'json'
@@ -29,7 +29,8 @@ Mongoose.Model.define 'User', {
         
     seeds: {
       defaults: (e) ->
-        data: []; for i in [1..2000]
+        data: []
+        for i in [1..20000]
           data.push {
             first: app.Faker.Name.findName().split(' ',2)[0]
             last: app.Faker.Name.findName().split(' ',2)[1]
@@ -42,7 +43,7 @@ Mongoose.Model.define 'User', {
               app.Faker.Company.catchPhrase()
             ]
           }
-        app.models.User.insert(data).exec (docs) -> # do something
+        app.models.User.insert(data).exec (docs) ->
         e.contentType 'json'
         e.respond(200)
     }

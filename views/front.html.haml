@@ -11,8 +11,7 @@
         %label Phone #
         %input{ type: "text", name: "bio[phoneNumber]" }
         %input.button.noSelect{ type: "submit", value: "Submit" }
-      #users
-        %script#users_partial{ src: '/public/views/users/_index.html', type: "text/html" }
+      #users!= this.partial('users/index.html.haml')
     %h3
       %a{ href: "#", onclick: "changeHash('/center/accordion/2');" } Section 5
     %div

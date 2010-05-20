@@ -94,7 +94,10 @@ $(function() {
       
       this.get('#/', function(context) {
         $.ajax({ url: '/users/get', success: function(items) {
-          $("#users_partial").render(items).appendTo("#users");
+          var results = $("#users_partial").render(items).filter(function() {
+            return this.nodeType != 3;
+          });
+          results.appendTo("#users");
         }})
       });
       
@@ -106,8 +109,7 @@ $(function() {
       
       this.post('#/users/post', function() {
         var data = this.params.toHash();
-        $.ajax({ type: "POST", url: "/users/seed", data: data });
-        this.log(data);
+        $.ajax({ type: "POST", url: "/users/post", data: data });
         return false;
       });
 
