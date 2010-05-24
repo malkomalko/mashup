@@ -97,11 +97,6 @@ $(function() {
           $("#users_partial").render(items).filter(function() {
             return this.nodeType != 3;
           }).appendTo("#users");
-          
-          $('#users').masonry({ 
-            columnWidth: 100, 
-            itemSelector: '.box:visible' 
-          });
         }})
       });
       
